@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:orange_app/screens/see_all_category.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -20,8 +21,8 @@ class HomeScreen extends StatelessWidget {
         // ignore: prefer_const_constructors
         //design the code course box
         Container(
-          margin: const EdgeInsets.all(15.0),
-          padding: const EdgeInsets.all(3.0),
+          margin: const EdgeInsets.only(left: 15.0, right: 15.0),
+          // padding: const EdgeInsets.all(3.0),
           width: 390.0,
           height: 190.0,
           decoration: BoxDecoration(
@@ -72,14 +73,37 @@ class HomeScreen extends StatelessWidget {
             Align(
               alignment: Alignment.centerLeft,
               child: Container(
-                padding: const EdgeInsets.only(top: 10.0, right: 90, left: 20),
+                padding: const EdgeInsets.only(top: 10, right: 90, left: 20),
                 // color: Colors.red,
-                child: Text(
-                  'Top Categories',
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                  ),
+                child: Row(
+                  children: [
+                    Text(
+                      'Top Categories',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 50.0),
+                      child: GestureDetector(
+                        onTap: () => Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => SeeAllCategory(),
+                          ),
+                        ),
+                        child: Text(
+                          'See All',
+                          style: TextStyle(
+                            fontSize: 16,
+                            color: Color(0xFFE65100),
+                            fontWeight: FontWeight.bold,
+                            decoration: TextDecoration.underline,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ),
@@ -91,7 +115,7 @@ class HomeScreen extends StatelessWidget {
           // margin: const EdgeInsets.all(15.0),
           // padding: const EdgeInsets.all(3.0),
           width: 390.0,
-          height: 190.0,
+          height: 150.0,
           decoration: BoxDecoration(
             shape: BoxShape.rectangle,
             border: Border.all(color: Colors.white),
@@ -117,7 +141,7 @@ class HomeScreen extends StatelessWidget {
             Align(
               alignment: Alignment.centerLeft,
               child: Container(
-                padding: const EdgeInsets.only(top: 10.0, right: 90, left: 20),
+                padding: const EdgeInsets.only(right: 90, left: 20),
                 // color: Colors.red,
                 child: Text(
                   'New Courses',
@@ -136,7 +160,7 @@ class HomeScreen extends StatelessWidget {
           // margin: const EdgeInsets.all(15.0),
           // padding: const EdgeInsets.all(3.0),
           width: 390.0,
-          height: 190.0,
+          height: 140.0,
           decoration: BoxDecoration(
             shape: BoxShape.rectangle,
             border: Border.all(color: Colors.white),
@@ -153,7 +177,26 @@ class HomeScreen extends StatelessWidget {
                   fit: BoxFit.cover),
             ],
           ),
-        ), //end container category
+        ),
+
+        Padding(
+          padding: const EdgeInsets.only(top: 60.0),
+          child: BottomNavigationBar(items: [
+            BottomNavigationBarItem(
+              icon: Image.asset('Assets/images/Activehome.png'),
+              label: '',
+            ),
+            BottomNavigationBarItem(
+              icon: Image.asset('Assets/images/book-open.png'),
+              label: '',
+            ),
+            BottomNavigationBarItem(
+              icon: Image.asset('Assets/images/Profile.png'),
+              label: '',
+            ),
+          ]),
+        ),
+        //end container category
       ]),
     );
   }
