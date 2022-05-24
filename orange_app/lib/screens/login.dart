@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:orange_app/screens/home_screen.dart';
 import 'package:orange_app/screens/sign_up.dart';
 import 'package:orange_app/screens/start_screen.dart';
 
@@ -103,9 +104,11 @@ class Login extends StatelessWidget {
                   style: ElevatedButton.styleFrom(
                     primary: Color(0xFFE65100),
                   ),
-                  onPressed: () {
-                    print('Login');
-                  },
+                  onPressed: () => Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => HomeScreen(),
+                    ),
+                  ),
                 ),
               ),
             ),
