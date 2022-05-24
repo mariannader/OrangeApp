@@ -1,6 +1,7 @@
 // ignore_for_file: implementation_imports, prefer_const_constructors, duplicate_ignore
 
 import 'package:flutter/material.dart';
+import 'package:orange_app/screens/login.dart';
 import 'package:orange_app/screens/sign_up.dart';
 
 class ScreenFour extends StatelessWidget {
@@ -69,7 +70,7 @@ class ScreenFour extends StatelessWidget {
                       child: GestureDetector(
                         onTap: () => Navigator.of(context).push(
                           MaterialPageRoute(
-                            builder: (context) => SignUp(),
+                            builder: (context) => Login(),
                           ),
                         ),
                         child: Image(
