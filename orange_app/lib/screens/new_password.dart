@@ -4,17 +4,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:orange_app/screens/forget_password.dart';
-import 'package:orange_app/screens/new_password.dart';
+import 'package:orange_app/screens/home_screen.dart';
 
-class VerifyEmail extends StatelessWidget {
-  const VerifyEmail({Key? key}) : super(key: key);
+class NewPassword extends StatelessWidget {
+  const NewPassword({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'Verify Your Email',
+          'Create New Password',
           style: TextStyle(color: Colors.black),
         ),
         backgroundColor: Colors.white,
@@ -30,14 +30,14 @@ class VerifyEmail extends StatelessWidget {
           // ignore: prefer_const_constructors
           Center(
             child: Image(
-              image: AssetImage('Assets/images/VerifyEmail.png'),
+              image: AssetImage('Assets/images/NewPass.png'),
             ),
           ),
           Padding(
             padding: const EdgeInsets.only(top: 30, left: 50.0, right: 50),
             child: Center(
               child: Text(
-                'please enter the 4-digit code sent to',
+                'Enter your new password',
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: 16,
@@ -46,19 +46,7 @@ class VerifyEmail extends StatelessWidget {
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.only(top: 10, left: 50.0, right: 50),
-            child: Center(
-              child: Text(
-                'mariannader@gmail.com',
-                style: TextStyle(
-                  color: Color(0xFFE65100),
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
-          ),
+
           Padding(
             padding: const EdgeInsets.all(10.0),
             child: Container(
@@ -67,7 +55,23 @@ class VerifyEmail extends StatelessWidget {
               child: TextField(
                 decoration: const InputDecoration(
                   border: OutlineInputBorder(),
-                  labelText: 'Enter Your Verify Code',
+                  labelText: 'New Password',
+                ),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(
+              left: 10.0,
+              right: 10.0,
+            ),
+            child: Container(
+              padding: const EdgeInsets.all(10),
+              // ignore: prefer_const_constructors
+              child: TextField(
+                decoration: const InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'Confirm Password',
                 ),
               ),
             ),
@@ -98,11 +102,11 @@ class VerifyEmail extends StatelessWidget {
                           //send code to user email if it exists if not then do nothing
                           onPressed: () => Navigator.of(context).push(
                             MaterialPageRoute(
-                              builder: (context) => NewPassword(),
+                              builder: (context) => HomeScreen(),
                             ),
                           ),
                           child: Text(
-                            "Verify",
+                            "Submit",
                             style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
