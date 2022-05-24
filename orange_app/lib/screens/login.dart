@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:orange_app/screens/forget_password.dart';
 import 'package:orange_app/screens/home_screen.dart';
 import 'package:orange_app/screens/sign_up.dart';
 import 'package:orange_app/screens/start_screen.dart';
@@ -82,10 +83,11 @@ class Login extends StatelessWidget {
               ),
             ),
             TextButton(
-              onPressed: () {
-                //forgot password screen
-                print('forget Password Clicked');
-              },
+              onPressed: () => Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => ForgetPassword(),
+                ),
+              ),
               child: const Text(
                 'Forgot Password',
                 style: TextStyle(
