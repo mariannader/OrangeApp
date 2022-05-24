@@ -64,6 +64,96 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
         ),
+
+        //Top Category text
+
+        Column(
+          children: <Widget>[
+            Align(
+              alignment: Alignment.centerLeft,
+              child: Container(
+                padding: const EdgeInsets.only(top: 10.0, right: 90, left: 20),
+                // color: Colors.red,
+                child: Text(
+                  'Top Categories',
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+
+        //category continer
+        Container(
+          // margin: const EdgeInsets.all(15.0),
+          // padding: const EdgeInsets.all(3.0),
+          width: 390.0,
+          height: 190.0,
+          decoration: BoxDecoration(
+            shape: BoxShape.rectangle,
+            border: Border.all(color: Colors.white),
+            color: Colors.white,
+            borderRadius: BorderRadius.all(Radius.circular(16)),
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Image.asset('Assets/images/Graphics.png', fit: BoxFit.cover),
+              Image.asset('Assets/images/Programming Languages.png',
+                  fit: BoxFit.cover),
+              Image.asset('Assets/images/Web Delevopment.png',
+                  fit: BoxFit.cover),
+            ],
+          ),
+        ), //end container category
+
+        //Top Category text
+
+        Column(
+          children: <Widget>[
+            Align(
+              alignment: Alignment.centerLeft,
+              child: Container(
+                padding: const EdgeInsets.only(top: 10.0, right: 90, left: 20),
+                // color: Colors.red,
+                child: Text(
+                  'New Courses',
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+
+        //category continer
+        Container(
+          // margin: const EdgeInsets.all(15.0),
+          // padding: const EdgeInsets.all(3.0),
+          width: 390.0,
+          height: 190.0,
+          decoration: BoxDecoration(
+            shape: BoxShape.rectangle,
+            border: Border.all(color: Colors.white),
+            color: Colors.white,
+            borderRadius: BorderRadius.all(Radius.circular(16)),
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Image.asset('Assets/images/Graphics.png', fit: BoxFit.cover),
+              Image.asset('Assets/images/Programming Languages.png',
+                  fit: BoxFit.cover),
+              Image.asset('Assets/images/Web Delevopment.png',
+                  fit: BoxFit.cover),
+            ],
+          ),
+        ), //end container category
       ]),
     );
   }

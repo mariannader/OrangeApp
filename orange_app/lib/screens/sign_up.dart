@@ -124,9 +124,11 @@ class SignUp extends StatelessWidget {
                 style: ElevatedButton.styleFrom(
                   primary: Color(0xFFE65100),
                 ),
-                onPressed: () {
-                  print('Sign Up');
-                },
+                onPressed: () => Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => Login(),
+                  ),
+                ),
               ),
             ),
             Row(
