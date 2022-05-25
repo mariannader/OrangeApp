@@ -3,7 +3,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:orange_app/screens/profile.dart';
 import 'package:orange_app/screens/see_all_category.dart';
+import 'package:orange_app/screens/web_development_course_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -128,8 +130,15 @@ class HomeScreen extends StatelessWidget {
               Image.asset('Assets/images/Graphics.png', fit: BoxFit.cover),
               Image.asset('Assets/images/Programming Languages.png',
                   fit: BoxFit.cover),
-              Image.asset('Assets/images/Web Delevopment.png',
-                  fit: BoxFit.cover),
+              GestureDetector(
+                onTap: () => Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => WebDevelopmentCourseScreen(),
+                  ),
+                ),
+                child: Image.asset('Assets/images/Web Delevopment.png',
+                    fit: BoxFit.cover),
+              ),
             ],
           ),
         ), //end container category
@@ -183,15 +192,39 @@ class HomeScreen extends StatelessWidget {
           padding: const EdgeInsets.only(top: 60.0),
           child: BottomNavigationBar(items: [
             BottomNavigationBarItem(
-              icon: Image.asset('Assets/images/Activehome.png'),
+              icon: GestureDetector(
+                onTap: () => Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => HomeScreen(),
+                  ),
+                ),
+                child: Image.asset('Assets/images/Activehome.png',
+                    fit: BoxFit.cover),
+              ),
               label: '',
             ),
             BottomNavigationBarItem(
-              icon: Image.asset('Assets/images/book-open.png'),
+              icon: GestureDetector(
+                onTap: () => Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => HomeScreen(),
+                  ),
+                ),
+                child: Image.asset('Assets/images/book-open.png',
+                    fit: BoxFit.cover),
+              ),
               label: '',
             ),
             BottomNavigationBarItem(
-              icon: Image.asset('Assets/images/Profile.png'),
+              icon: GestureDetector(
+                onTap: () => Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => Profile(),
+                  ),
+                ),
+                child:
+                    Image.asset('Assets/images/Profile.png', fit: BoxFit.cover),
+              ),
               label: '',
             ),
           ]),
